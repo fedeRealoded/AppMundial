@@ -6,13 +6,15 @@
 }
 
 .coyspu-logo{
-  width: clamp(150px, 18vw, 250px);
+  width: clamp(110px, 11vw, 165px);
   height: auto;
   display: block;
-  padding: 4px 0;
-  border-radius: 0;
+  padding: 0;
   background: transparent;
+  border-radius: 0;
   box-shadow: none;
+  filter: drop-shadow(0 5px 12px rgba(0,0,0,.22));
+  opacity: .9;
 }
 
 @media(max-width:900px){
