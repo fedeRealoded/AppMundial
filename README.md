@@ -1,7 +1,2 @@
-# Mundial 2026 - Partidos de hoy
+# Mundial 2026 - Partidos Televisados por COYSPU TV Marcos Juarez.
 
-Subí estos archivos sueltos en la raíz del repositorio.
-
-Toma la fecha del navegador y muestra todos los partidos de ese día.
-
-Los horarios están cargados en hora Argentina.
