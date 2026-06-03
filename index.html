@@ -3,65 +3,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mundial 2026 - Fixture TV</title>
-  <meta name="description" content="Placa dinámica de partidos del Mundial 2026 por fecha y canal." />
+  <title>Mundial 2026 - Partidos de hoy</title>
+  <meta name="description" content="Placa dinámica diaria de partidos del Mundial 2026 por fecha, horario y canal." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="wrapper">
-    <section class="toolbar" aria-label="Controles de partido">
-      <button id="prevMatch" class="nav-button" type="button">‹ Anterior</button>
-      <div class="selects">
-        <label>Fecha<select id="dateSelect"></select></label>
-        <label>Partido<select id="matchSelect"></select></label>
-      </div>
-      <button id="nextMatch" class="nav-button" type="button">Siguiente ›</button>
-    </section>
-
-    <section class="match-card" aria-label="Partido seleccionado">
-      <div class="left-panel">
-        <p id="groupName" class="group">Grupo A</p>
-        <div class="team-row">
-          <div class="team-badge"><img id="team1Flag" alt="" /></div>
-          <h2 id="team1Name">México</h2>
-        </div>
-        <div class="team-row">
-          <div class="team-badge"><img id="team2Flag" alt="" /></div>
-          <h2 id="team2Name">Sudáfrica</h2>
-        </div>
+    <section class="topbar" aria-label="Controles de fecha">
+      <div>
+        <p class="eyebrow">Mundial 2026</p>
+        <h1>Partidos de hoy</h1>
+        <p id="dateStatus" class="date-status"></p>
       </div>
 
-      <div class="divider" aria-hidden="true"></div>
-
-      <div class="right-panel">
-        <div class="info-block">
-          <div class="info-line">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="4" width="18" height="17" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-            </span>
-            <span id="dateText" class="info-text">Jue, 11/6</span>
-          </div>
-          <div class="info-line">
-            <span class="icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 16 14"></polyline>
-              </svg>
-            </span>
-            <span id="timeText" class="info-text">4:00 p.m.</span>
-          </div>
-        </div>
-
-        <div class="channel-box">
-          <span class="channel-label">Canal</span>
-          <div id="channelBrand" class="channel-brand"></div>
-          <div id="simulcastBox" class="simulcast-box"></div>
-        </div>
+      <div class="controls">
+        <label>
+          Ver otra fecha
+          <select id="dateSelect"></select>
+        </label>
+        <button id="todayButton" type="button">Hoy</button>
       </div>
     </section>
-    <p id="counter" class="counter"></p>
+
+    <section id="matchesContainer" class="matches-container" aria-label="Partidos del día"></section>
+
+    <section id="emptyState" class="empty-state" hidden>
+      <h2>No hay partidos cargados para hoy</h2>
+      <p>La página toma la fecha del navegador. Para probar la placa, elegí una fecha del Mundial en el selector.</p>
+    </section>
   </main>
+
   <script src="partidos.js"></script>
   <script src="app.js"></script>
 </body>
