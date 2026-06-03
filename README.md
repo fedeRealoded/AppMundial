@@ -1,20 +1,15 @@
-# Página estática - Partido del día
+# Web dinámica - Mundial 2026
 
-Versión rígida, tipo placa, similar al ejemplo visual.
+Misma estética de la placa estática, pero dinámica.
 
-## Incluye
-- Grupo
-- Dos selecciones
-- Fecha
-- Hora
-- Canal de transmisión
+## Qué permite
+- Elegir fecha.
+- Elegir partido dentro de esa fecha.
+- Avanzar o retroceder partido por partido.
+- Mostrar equipos, fecha, hora y canal.
+- Mostrar simulcast si corresponde.
 
-## Para editar rápido
-Abrí `index.html` y cambiá:
-- Grupo
-- Equipos
-- Fecha
-- Hora
-- Canal
+## Cómo editar
+Abrí `partidos.js` y modificá el array `PARTIDOS`.
 
-Si querés cambiar los logos/banderas, reemplazá las URLs de las imágenes en los `<img>`.
+Nota: el PDF original no incluye horarios. Dejé `4:00 p.m.` como horario editable de referencia en todos los partidos.

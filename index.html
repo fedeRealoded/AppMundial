@@ -3,28 +3,33 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Partido del día</title>
-  <meta name="description" content="Placa web estática para mostrar un partido y el canal de televisación." />
+  <title>Mundial 2026 - Partido del día</title>
+  <meta name="description" content="Placa dinámica de partidos del Mundial 2026 por fecha y canal." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="wrapper">
-    <section class="match-card" aria-label="Partido del día">
+    <section class="toolbar" aria-label="Controles de partido">
+      <button id="prevMatch" class="nav-button" type="button">‹ Anterior</button>
+      <div class="selects">
+        <label>Fecha<select id="dateSelect"></select></label>
+        <label>Partido<select id="matchSelect"></select></label>
+      </div>
+      <button id="nextMatch" class="nav-button" type="button">Siguiente ›</button>
+    </section>
+
+    <section class="match-card" aria-label="Partido seleccionado">
       <div class="left-panel">
-        <p class="group">Grupo A</p>
+        <p id="groupName" class="group">Grupo A</p>
 
         <div class="team-row">
-          <div class="team-badge">
-            <img src="https://flagcdn.com/w160/mx.png" alt="Bandera de México" />
-          </div>
-          <h2>México</h2>
+          <div class="team-badge"><img id="team1Flag" alt="" /></div>
+          <h2 id="team1Name">México</h2>
         </div>
 
         <div class="team-row">
-          <div class="team-badge">
-            <img src="https://flagcdn.com/w160/za.png" alt="Bandera de Sudáfrica" />
-          </div>
-          <h2>Sudáfrica</h2>
+          <div class="team-badge"><img id="team2Flag" alt="" /></div>
+          <h2 id="team2Name">Sudáfrica</h2>
         </div>
       </div>
 
@@ -33,7 +38,7 @@
       <div class="right-panel">
         <div class="info-block">
           <div class="info-line">
-            <span class="icon calendar" aria-hidden="true">
+            <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="4" width="18" height="17" rx="2"></rect>
                 <line x1="16" y1="2" x2="16" y2="6"></line>
@@ -41,32 +46,32 @@
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
             </span>
-            <span class="info-text">Jue, 11/6</span>
+            <span id="dateText" class="info-text">Jue, 11/6</span>
           </div>
 
           <div class="info-line">
-            <span class="icon clock" aria-hidden="true">
+            <span class="icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="9"></circle>
                 <polyline points="12 7 12 12 16 14"></polyline>
               </svg>
             </span>
-            <span class="info-text">4:00 p.m.</span>
+            <span id="timeText" class="info-text">4:00 p.m.</span>
           </div>
         </div>
 
         <div class="channel-box">
           <span class="channel-label">Canal</span>
-          <div class="channel-brand">
-            <div class="channel-logo">
-              <span class="d-mark">D</span>
-              <span class="sports-mark">SPORTS</span>
-            </div>
-            <div class="channel-name">DSPORTS</div>
-          </div>
+          <div id="channelBrand" class="channel-brand"></div>
+          <div id="simulcastBox" class="simulcast-box"></div>
         </div>
       </div>
     </section>
+
+    <p id="counter" class="counter"></p>
   </main>
+
+  <script src="partidos.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
