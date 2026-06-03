@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Partido del día</title>
+  <meta name="description" content="Placa web estática para mostrar un partido y el canal de televisación." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrapper">
+    <section class="match-card" aria-label="Partido del día">
+      <div class="left-panel">
+        <p class="group">Grupo A</p>
+
+        <div class="team-row">
+          <div class="team-badge">
+            <img src="https://flagcdn.com/w160/mx.png" alt="Bandera de México" />
+          </div>
+          <h2>México</h2>
+        </div>
+
+        <div class="team-row">
+          <div class="team-badge">
+            <img src="https://flagcdn.com/w160/za.png" alt="Bandera de Sudáfrica" />
+          </div>
+          <h2>Sudáfrica</h2>
+        </div>
+      </div>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <div class="right-panel">
+        <div class="info-block">
+          <div class="info-line">
+            <span class="icon calendar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="17" rx="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </span>
+            <span class="info-text">Jue, 11/6</span>
+          </div>
+
+          <div class="info-line">
+            <span class="icon clock" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"></circle>
+                <polyline points="12 7 12 12 16 14"></polyline>
+              </svg>
+            </span>
+            <span class="info-text">4:00 p.m.</span>
+          </div>
+        </div>
+
+        <div class="channel-box">
+          <span class="channel-label">Canal</span>
+          <div class="channel-brand">
+            <div class="channel-logo">
+              <span class="d-mark">D</span>
+              <span class="sports-mark">SPORTS</span>
+            </div>
+            <div class="channel-name">DSPORTS</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
