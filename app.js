@@ -1,4 +1,5 @@
 const flagMap = {
+  "Alemania": "de",
   "Argentina": "ar",
   "Argelia": "dz",
   "Arabia Saudita": "sa",
@@ -44,6 +45,7 @@ const flagMap = {
   "Suiza": "ch",
   "Túnez": "tn",
   "Turquía": "tr",
+  "Uruguay": "uy",
   "USA": "us",
   "Uzbekistán": "uz"
 };
