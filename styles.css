@@ -273,3 +273,205 @@
     font-size:1.2rem;
   }
 }
+
+
+/* =========================================================
+   MODO PC: si hay más de 2 partidos, mostrar todo sin scroll
+   ========================================================= */
+
+@media (min-width: 901px) {
+
+  body{
+    min-height:100vh;
+    overflow:hidden;
+  }
+
+  .wrapper{
+    height:calc(100vh - 44px);
+    display:flex;
+    flex-direction:column;
+  }
+
+  .topbar{
+    flex:0 0 auto;
+    margin-bottom:12px;
+  }
+
+  .matches-container{
+    flex:1 1 auto;
+    min-height:0;
+    overflow:hidden;
+  }
+
+  /* 3 partidos: 3 filas iguales dentro de la pantalla */
+  .matches-container.count-3{
+    display:grid;
+    grid-template-rows:repeat(3, minmax(0, 1fr));
+    gap:10px;
+    min-height:0;
+  }
+
+  /* 4 partidos: 4 filas iguales dentro de la pantalla */
+  .matches-container.count-4{
+    display:grid;
+    grid-template-rows:repeat(4, minmax(0, 1fr));
+    gap:8px;
+    min-height:0;
+  }
+
+  /* Más de 4 partidos: también compacta todo */
+  .matches-container.count-many{
+    display:grid;
+    grid-auto-rows:minmax(0, 1fr);
+    gap:7px;
+    min-height:0;
+  }
+
+  /* Compactación general para 3 o más partidos */
+  .matches-container.count-3 .match-card,
+  .matches-container.count-4 .match-card,
+  .matches-container.count-many .match-card{
+    min-height:0;
+    height:100%;
+    padding:12px 22px;
+    border-radius:22px;
+    gap:22px;
+  }
+
+  .matches-container.count-3 .group,
+  .matches-container.count-4 .group,
+  .matches-container.count-many .group{
+    margin-bottom:6px;
+    font-size:1rem;
+  }
+
+  .matches-container.count-3 .team-row,
+  .matches-container.count-4 .team-row,
+  .matches-container.count-many .team-row{
+    gap:12px;
+  }
+
+  .matches-container.count-3 .team-row + .team-row,
+  .matches-container.count-4 .team-row + .team-row,
+  .matches-container.count-many .team-row + .team-row{
+    margin-top:6px;
+  }
+
+  .matches-container.count-3 .team-badge,
+  .matches-container.count-4 .team-badge,
+  .matches-container.count-many .team-badge{
+    width:44px;
+    height:44px;
+    border-radius:12px;
+  }
+
+  .matches-container.count-3 .team-row h2,
+  .matches-container.count-4 .team-row h2,
+  .matches-container.count-many .team-row h2{
+    font-size:clamp(1.7rem, 3vw, 3.1rem);
+  }
+
+  .matches-container.count-3 .right-panel,
+  .matches-container.count-4 .right-panel,
+  .matches-container.count-many .right-panel{
+    gap:8px;
+  }
+
+  .matches-container.count-3 .info-block,
+  .matches-container.count-4 .info-block,
+  .matches-container.count-many .info-block{
+    gap:6px;
+  }
+
+  .matches-container.count-3 .info-line,
+  .matches-container.count-4 .info-line,
+  .matches-container.count-many .info-line{
+    gap:10px;
+  }
+
+  .matches-container.count-3 .icon,
+  .matches-container.count-4 .icon,
+  .matches-container.count-many .icon{
+    width:34px;
+    height:34px;
+  }
+
+  .matches-container.count-3 .info-text,
+  .matches-container.count-4 .info-text,
+  .matches-container.count-many .info-text{
+    font-size:clamp(1.6rem, 2.7vw, 3rem);
+  }
+
+  .matches-container.count-3 .channel-box,
+  .matches-container.count-4 .channel-box,
+  .matches-container.count-many .channel-box{
+    padding-top:8px;
+  }
+
+  .matches-container.count-3 .channel-label,
+  .matches-container.count-4 .channel-label,
+  .matches-container.count-many .channel-label{
+    margin-bottom:6px;
+    font-size:.68rem;
+  }
+
+  .matches-container.count-3 .channels,
+  .matches-container.count-4 .channels,
+  .matches-container.count-many .channels{
+    gap:7px;
+  }
+
+  .matches-container.count-3 .channel-logo,
+  .matches-container.count-4 .channel-logo,
+  .matches-container.count-many .channel-logo{
+    min-height:36px;
+    padding:0 8px;
+    border-radius:11px;
+    gap:6px;
+  }
+
+  .matches-container.count-3 .channel-logo__grid,
+  .matches-container.count-4 .channel-logo__grid,
+  .matches-container.count-many .channel-logo__grid{
+    min-height:26px;
+    padding:3px 8px;
+    border-radius:9px;
+    font-size:.9rem;
+  }
+
+  .matches-container.count-3 .logo-dsports .d-mark,
+  .matches-container.count-4 .logo-dsports .d-mark,
+  .matches-container.count-many .logo-dsports .d-mark{
+    width:26px;
+    height:26px;
+    border-radius:7px;
+    font-size:.95rem;
+  }
+
+  .matches-container.count-3 .logo-dsports,
+  .matches-container.count-4 .logo-dsports,
+  .matches-container.count-many .logo-dsports{
+    font-size:1.05rem;
+  }
+
+  .matches-container.count-3 .logo-tyc,
+  .matches-container.count-4 .logo-tyc,
+  .matches-container.count-many .logo-tyc{
+    font-size:1rem;
+  }
+
+  .matches-container.count-3 .logo-telefe,
+  .matches-container.count-4 .logo-telefe,
+  .matches-container.count-many .logo-telefe{
+    font-size:.95rem;
+  }
+
+  .matches-container.count-3 .dot,
+  .matches-container.count-4 .dot,
+  .matches-container.count-many .dot{
+    width:10px;
+    height:10px;
+  }
+}
+
+
