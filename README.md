@@ -1,17 +1,2 @@
-# Mundial 2026 - Partidos de hoy
+# Mundial 2026 - Partidos de hoy - TV COYSPU  
 
-Subí estos archivos sueltos en la raíz del repositorio.
-
-Toma la fecha del navegador y muestra todos los partidos de ese día.
-
-Los horarios están cargados en hora Argentina.
-
-## Logo COYSPU
-
-El logo está en `assets/logo-coyspu.png` y se muestra arriba de la placa.
-
-## Popup inicial de grilla
-
-Muestra canales por grilla: Básico HD y Premium HD.
-
-Incluye `.nojekyll` para evitar que GitHub Pages procese el sitio con Jekyll.
