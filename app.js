@@ -2,6 +2,7 @@ const flagMap={"Argentina":"ar","Argelia":"dz","Arabia Saudita":"sa","Australia"
 
 const gridPopup = document.querySelector("#gridPopup");
 const gridPopupOk = document.querySelector("#gridPopupOk");
+const openGridPopup = document.querySelector("#openGridPopup");
 
 let gridPopupTimer = null;
 
@@ -16,28 +17,48 @@ function closeGridPopup() {
   }
 }
 
-if (gridPopup) {
-  // Cierre automático a los 5 segundos
-  gridPopupTimer = setTimeout(() => {
-    closeGridPopup();
-  }, 5000);
+function openGridPopupWindow(autoClose = false) {
+  if (!gridPopup) return;
 
-  // Cerrar tocando fuera del cartel o en la X
+  gridPopup.classList.remove("is-hidden");
+
+  if (gridPopupTimer) {
+    clearTimeout(gridPopupTimer);
+    gridPopupTimer = null;
+  }
+
+  if (autoClose) {
+    gridPopupTimer = setTimeout(() => {
+      closeGridPopup();
+    }, 5000);
+  }
+}
+
+if (gridPopup) {
+  // Al cargar la página, se muestra y se cierra solo a los 5 segundos.
+  openGridPopupWindow(true);
+
   gridPopup.addEventListener("click", (event) => {
     if (event.target.matches("[data-close-popup]")) {
       closeGridPopup();
     }
   });
 
-  // Cerrar con botón Entendido
   if (gridPopupOk) {
     gridPopupOk.addEventListener("click", closeGridPopup);
   }
 
-  // Cerrar con tecla Escape
+  if (openGridPopup) {
+    openGridPopup.addEventListener("click", () => {
+      // Al abrirlo manualmente, queda abierto hasta que el usuario lo cierre.
+      openGridPopupWindow(false);
+    });
+  }
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeGridPopup();
     }
   });
+}
 }
