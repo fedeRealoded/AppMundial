@@ -248,15 +248,10 @@ function renderDate(date) {
     `${formatDateLong(date)} · ${matches.length} partido${matches.length === 1 ? "" : "s"} · hora Argentina`;
 }
 
-function initialDate() {
-  const today = todayFromBrowser();
-  const dates = uniqueDates();
-
-  return dates.includes(today) ? today : dates[0];
-}
-
 fillDateSelect();
-renderDate(initialDate());
+
+/* Al iniciar la página, muestra siempre la fecha real del navegador */
+renderDate(todayFromBrowser());
 
 dateSelect.addEventListener("change", () => {
   renderDate(dateSelect.value);
