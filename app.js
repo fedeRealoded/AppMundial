@@ -180,6 +180,7 @@ function matchCard(partido) {
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
             </span>
+
             <span class="info-text">${formatDateShort(partido.fecha)}</span>
           </div>
 
@@ -191,12 +192,14 @@ function matchCard(partido) {
                 <polyline points="12 7 12 12 16 14"></polyline>
               </svg>
             </span>
+
             <span class="info-text">${partido.hora}</span>
           </div>
         </div>
 
         <div class="channel-box">
           <span class="channel-label">Canal</span>
+
           <div class="channels">
             ${partido.canales.map(channelLogo).join("")}
           </div>
@@ -240,7 +243,9 @@ function renderDate(date) {
   }
 
   matchesContainer.innerHTML = matches.map(matchCard).join("");
-  dateStatus.textContent = `${formatDateLong(date)} · ${matches.length} partido${matches.length === 1 ? "" : "s"} · hora Argentina`;
+
+  dateStatus.textContent =
+    `${formatDateLong(date)} · ${matches.length} partido${matches.length === 1 ? "" : "s"} · hora Argentina`;
 }
 
 function initialDate() {
@@ -253,72 +258,10 @@ function initialDate() {
 fillDateSelect();
 renderDate(initialDate());
 
-dateSelect.addEventListener("change", () => renderDate(dateSelect.value));
-todayButton.addEventListener("click", () => renderDate(todayFromBrowser()));
+dateSelect.addEventListener("change", () => {
+  renderDate(dateSelect.value);
+});
 
-/* Popup inicial de grilla */
-const gridPopup = document.querySelector("#gridPopup");
-const gridPopupOk = document.querySelector("#gridPopupOk");
-const openGridPopup = document.querySelector("#openGridPopup");
-
-let gridPopupTimer = null;
-
-function closeGridPopup() {
-  if (gridPopup) {
-    gridPopup.classList.add("is-hidden");
-  }
-
-  if (gridPopupTimer) {
-    clearTimeout(gridPopupTimer);
-    gridPopupTimer = null;
-  }
-}
-
-function openGridPopupWindow(autoClose = false) {
-  if (!gridPopup) return;
-
-  gridPopup.classList.remove("is-hidden");
-
-  if (gridPopupTimer) {
-    clearTimeout(gridPopupTimer);
-    gridPopupTimer = null;
-  }
-
-  if (autoClose) {
-    gridPopupTimer = setTimeout(() => {
-      closeGridPopup();
-    }, 5000);
-  }
-}
-
-if (gridPopup) {
-  // Al cargar la página, se muestra y se cierra solo a los 5 segundos.
-  openGridPopupWindow(true);
-
-  // Cierra tocando fuera del cartel o con la X.
-  gridPopup.addEventListener("click", (event) => {
-    if (event.target.matches("[data-close-popup]")) {
-      closeGridPopup();
-    }
-  });
-
-  // Cierra con botón Entendido.
-  if (gridPopupOk) {
-    gridPopupOk.addEventListener("click", closeGridPopup);
-  }
-
-  // Abre manualmente con el botón Ver grilla.
-  if (openGridPopup) {
-    openGridPopup.addEventListener("click", () => {
-      // Manualmente queda abierto hasta que el usuario lo cierre.
-      openGridPopupWindow(false);
-    });
-  }
-
-  // Cierra con Escape.
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeGridPopup();
-    }
-  });
-}
+todayButton.addEventListener("click", () => {
+  renderDate(todayFromBrowser());
+});
