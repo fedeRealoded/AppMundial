@@ -31,7 +31,8 @@ const PARTIDOS = [
     "equipo2": "Paraguay",
     "senal": "Dsports",
     "canales": [
-      "Dsports"
+      "Dsports",
+      "TyC Sports"
     ],
     "hora": "17:30"
   },
@@ -67,7 +68,8 @@ const PARTIDOS = [
     "equipo2": "Suecia",
     "senal": "Dsports",
     "canales": [
-      "Dsports"
+      "Dsports",
+      "TyC Sports"
     ],
     "hora": "18:00"
   },
@@ -115,7 +117,8 @@ const PARTIDOS = [
     "equipo2": "Bosnia",
     "senal": "Dsports",
     "canales": [
-      "Dsports"
+      "Dsports",
+      "TyC Sports"
     ],
     "hora": "21:00"
   },
@@ -139,7 +142,9 @@ const PARTIDOS = [
     "equipo2": "Croacia",
     "senal": "Dsports",
     "canales": [
-      "Dsports"
+      "Dsports",
+      "TyC Sports",
+      "Telefe"
     ],
     "hora": "20:00"
   },
@@ -163,7 +168,8 @@ const PARTIDOS = [
     "equipo2": "Egipto",
     "senal": "Dsports",
     "canales": [
-      "Dsports"
+      "Dsports",
+      "TyC Sports"
     ],
     "hora": "15:00"
   },
